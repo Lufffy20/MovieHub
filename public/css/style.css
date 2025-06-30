@@ -1,0 +1,96 @@
+  body {
+    background-color: #111;
+    color: #fff;
+    font-family: Arial, sans-serif;
+  }
+
+  .section-title {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .section-title::before {
+    content: "🔥";
+    font-size: 1.5rem;
+  }
+
+  .movie-container {
+    padding: 0 30px;
+  }
+
+  .movie-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 cards per row by default */
+    gap: 1rem;
+  }
+
+  /* Responsive: 2 cards per row on small screens */
+  @media (max-width: 768px) {
+    .movie-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .movie-box {
+    background-color: #1c1c1c;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .movie-box:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(255, 193, 7, 0.3);
+  }
+
+  .movie-box img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+  }
+
+  .movie-info {
+    padding: 10px;
+    font-size: 0.9rem;
+    color: #ddd;
+  }
+
+  .movie-info strong {
+    display: block;
+    color: #ffc107;
+    font-size: 1rem;
+    margin-bottom: 4px;
+  }
+
+/* Proper dark-themed pagination style */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 20px;
+  margin-right: 250px;
+  flex-wrap: wrap;
+}
+
+.page-item .page-link {
+  background-color: #222;
+  color: #ffc107;
+  border: 1px solid #444;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.page-item .page-link:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+.page-item.active .page-link {
+  background-color: #ffc107;
+  color: #111;
+  border-color: #ffc107;
+}
