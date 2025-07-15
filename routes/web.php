@@ -7,7 +7,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\MovieController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\FilmController;
-
+use App\Http\Controllers\DashboardController;
 
 
 Route::get('/',[MovieController::class,'index'])->name('homepage');
@@ -15,7 +15,6 @@ Route::get('/',[MovieController::class,'index'])->name('homepage');
 
 
 
-Route::get('/dashboard',[AdminController::class,'dashboard'])->name('Dashboard.page');
 Route::get('/create', [MovieController::class, 'create'])->name('movies.create');
 Route::post('/store', [MovieController::class, 'store'])->name('movies.store');
 Route::get('/showmovies', [MovieController::class, 'showmovies'])->name('showmovies');
@@ -42,3 +41,13 @@ Route::get('/admin', [AdminController::class, 'admin']);
 
 //mor moviesdetails
 Route::get('/film/{id}', [FilmController::class, 'show'])->name('movie.show');
+
+Route::get('/dashboard',[DashboardController::class,'dashboard'])->name('Dashboard.page');
+Route::get('/reports',[AdminController::class,'reports'])->name('reports.page');
+
+
+//setting
+Route::get('/settings', [AdminController::class, 'settings'])->name('admin.settings');
+Route::post('/settings/update-profile', [AdminController::class, 'updateProfile'])->name('admin.updateProfile');
+Route::post('/settings/change-password', [AdminController::class, 'changePassword'])->name('admin.changePassword');
+Route::post('/settings/update-website', [AdminController::class, 'updateWebsiteSettings'])->name('admin.updateWebsiteSettings');

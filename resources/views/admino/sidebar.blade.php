@@ -26,7 +26,7 @@
         <span class="material-icons-outlined">menu</span>
       </div>
       <div class="header-left">
-        <span class="material-icons-outlined">search</span>
+        <!-- <span class="material-icons-outlined">search</span> -->
       </div>
       <div class="header-right">
         <span class="material-icons-outlined">notifications</span>
@@ -72,12 +72,12 @@
           </a>
         </li> -->
         <li class="sidebar-list-item">
-          <a href="#">
+          <a href="{{ url('/reports') }}">
             <span class="material-icons-outlined">poll</span> Reports
           </a>
         </li>
         <li class="sidebar-list-item">
-          <a href="#">
+          <a href="{{ url('/settings') }}">
             <span class="material-icons-outlined">settings</span> Settings
           </a>
         </li>
